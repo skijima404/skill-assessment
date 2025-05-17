@@ -7,6 +7,35 @@
 >
 > 👉 **For the rationale behind this transition, see [ADR-0016](./docs/adr/0016-mvp-rollback.md).**
 
+## 🧩 About This Branch
+
+This branch implements a fully modular and structured version of the ChatGPT-based skill assessment application. It was developed as an advanced prototype to explore flexible, phase-driven facilitation within ChatGPT sessions.
+
+### Key Features
+
+- **Prompt Routing**  
+  A centralized router (`role_router.md`) detects trigger words (e.g., `PO`, `!debug`) to switch modes dynamically.
+
+- **Phase-Based Prompt Injection**  
+  Prompts are split by phase (`prompt_intro.md`, `prompt_roleplay.md`, etc.), and explicitly re-injected to mitigate ChatGPT’s memory drift.
+
+- **Facilitator Mode Enforcement**  
+  `facilitator_prompt.md` maintains neutral tone, avoids meta-commentary, and constrains ChatGPT’s behavior during roleplay phases.
+
+- **Config-Driven Architecture**  
+  Files like `config/po.yaml` and `config/lang/jp.yaml` map all relevant resources (prompts, characters, product briefs) to support role-specific logic.
+
+- **Reflection Phase with Report Output**  
+  After roleplay ends, a dedicated prompt (`prompt_report_generation.md`) is used to generate a markdown report with strengths and improvement points.
+
+### Status
+
+Due to practical constraints (e.g., unstable GitHub fetches, prompt completion bias), this version was scaled down for the MVP. See [ADR-0016](../../docs/adr/0016-mvp-scale-down.md) for the full decision rationale.
+
+However, this design may be reintroduced in future advanced versions—especially for more complex roles like Enterprise Architect.
+
+---
+
 > **For ChatGPT: Please read [README_chat.md](https://raw.githubusercontent.com/skijima404/skill-assessment/refs/heads/main/shared/chat_landing/README_chat.md) instead of this file.
 
 This repository provides ChatGPT-ready skill assessment templates for virtual OJT (On-the-Job Training) by role.
