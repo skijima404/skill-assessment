@@ -1,5 +1,12 @@
 # Skill Assessment Scenarios for Role-Based Virtual OJT
 
+> ⚠️ This branch (`extended-architecture`) contains a more advanced and modular design for the skill assessment platform.
+>
+> The current main branch has shifted to a simplified MVP due to practical constraints on ChatGPT’s behavior and network reliability.
+> This version remains preserved here as an exploratory prototype for future reuse.
+>
+> 👉 **For the rationale behind this transition, see [ADR-0016](./docs/adr/0016-mvp-rollback.md).**
+
 > **For ChatGPT: Please read [README_chat.md](https://raw.githubusercontent.com/skijima404/skill-assessment/refs/heads/main/shared/chat_landing/README_chat.md) instead of this file.
 
 This repository provides ChatGPT-ready skill assessment templates for virtual OJT (On-the-Job Training) by role.
